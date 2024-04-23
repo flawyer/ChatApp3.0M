@@ -82,6 +82,7 @@ contract ChatApp{
        require(checkUserExists(msg.sender),"Create an account first");
        require(checkUserExists(friend_key),"User is not registered!");
        require(checkAlreadyFriends(msg.sender,friend_key),"User is not a friend");
+      
        bytes32 chatCode=_getChatCode(msg.sender,friend_key);
        message memory newMessage=message(msg.sender,block.timestamp,_msg);
        allMessages[chatCode].push(newMessage);
