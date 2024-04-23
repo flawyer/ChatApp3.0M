@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\Nimad\\OneDrive\\Desktop\\Project\\chat-dapp-starter-file-main\\contracts\\ChatApp.sol": {
-      "lastModificationDate": 1696130451214,
-      "contentHash": "de49e9aa34ee530fa8c69116fbc4c823",
+    "C:\\Users\\Nimad\\OneDrive\\Desktop\\123\\chatapp3.0m\\contracts\\ChatApp.sol": {
+      "lastModificationDate": 1709138405386,
+      "contentHash": "4b30e38b711eccf4397fa5d5fe6f1303",
       "sourceName": "contracts/ChatApp.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -34,6 +34,41 @@
       ],
       "artifacts": [
         "ChatApp"
+      ]
+    },
+    "C:\\Users\\Nimad\\OneDrive\\Desktop\\123\\chatapp3.0m\\contracts\\Lock.sol": {
+      "lastModificationDate": 1709138484609,
+      "contentHash": "b03285eef98e5806ef3d55e5a6f0308e",
+      "sourceName": "contracts/Lock.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Lock"
       ]
     }
   }

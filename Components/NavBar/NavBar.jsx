@@ -1,31 +1,127 @@
+import React, { useEffect,useContext, useState } from 'react';
+import Image from "next/image";
 import Link from 'next/link';
-import { useContext, useState } from 'react';
-import { ChatAppContext } from '../../Context/ChatAppContext';
-function Navigation() {
-  const { account, userName, connectWallet } = useContext(ChatAppContext);
-  const [openModel, setOpenModel] = useState(false); // Add this if you intend to use 'openModel'
-  return (
-    <nav>
-      
-      <Link href="/">Home</Link><br/>
-      <Link href="/about">About</Link>
-      <div>
-              {account ? (
-                <button onClick={connectWallet}>
-                  <span>Connect Wallet</span>
-                </button>
-              ) : (
-                <button onClick={() => setOpenModel(true)}>
-                  <span>{userName}Flawyer</span>
-                </button>
-              )}
-            </div>
-            <div>  <button onClick={connectWallet}>
-                  <span>Connect Wallet</span>
-                </button></div>
-    </nav>
-  );
-}
 
-export default Navigation;
+import Style from "./NavBar.module.css";
+//import { imageOptimizer } from 'next/dist/server/image-optimizer';
+import { Model, Error } from "../index";
+import { ChatAppContect } from '../../Context/ChatAppContext';
+import images from "../../assets";
+import { ST } from 'next/dist/shared/lib/utils';
+
+const NavBar = () => {
+  
+  const menuItems = [
+    {
+      menu:"All Users",
+      link: "/alluser",
+    },
+    {
+      menu:"Chat",
+      link: "/",
+    },
+    {
+      menu:"Contact ",
+      link: "/",
+    },
+    {
+      menu:"Settings",
+      link: "/",
+    },
+    {
+      menu:" FAQS",
+      link: "/",
+    },
+    {
+      menu:"Terms of use",
+      link: "/",
+    }
+  ];
+  
+  //USESTATE
+  const[active,setActive] = useState(2);
+  const[open,setOpen] = useState(false);
+  const [openModel, setOpenModel] = useState(false); // Add this if you intend to use 'openModel'
+  
+  const { account, userName, connectWallet, createAccount, error } = useContext(ChatAppContect);
+  return (
+  //   <div className={Style.NavBar}>
+  //     <div className={Style.NavBar_box}>
+  //       <div className={Style.NavBar_box_left}>
+  //         <Image src={images.logo} alt="logo" width={50} height={50}>
+  //         </Image>
+  //       </div>
+  //       <div className={Style.NavBar_box_right}>
+          
+  //         {/*//DESKTOP*/}
+  //         <div className={Style.NavBar_box_right_menu}>
+  //           {menuItems.map((el, i)=> ( 
+  //             <div 
+  //             onClick={() => setActive(i + 1)} 
+  //             key={i + 1} 
+  //             className={`${Style.NavBar_box_right_menu_items} 
+  //             ${active == i+1 ? Style.active_btn : ""}
+  //           `}>
+  //             <Link 
+  //               className={Style.NavBar_box_right_menu_items_link}
+  //               href={el.link}
+  //             >
+  //               {el.menu}
+  //             </Link>
+  //           </div>
+  //           ))}
+  //           </div>  
+            
+  //           {/* //CONNECT WALLET */}
+  //           <div className={Style.NavBar_box_right_connect}>
+  //             { account == "" ? (
+  //               <button onClick={()=> connectWallet()}>
+  //                 {""}<span>Connet Wallet</span>
+  //               </button>
+  //             ) : (
+  //               <button  onClick={()=> setOpenModel(true)}>
+  //                 {""}
+  //                 <Image
+  //                   src={userName ? images.accountName : images.create2}
+  //                   alt="account Image"
+  //                   width={20}
+  //                   height={20}
+  //                   />
+  //                   {""}
+  //                   <small>{userName || "Create Account"}</small>
+  //               </button>
+  //             )}
+  //           </div>
+
+  //           <div className={Style.NavBar_box_right_open}
+  //           onClick={() => setOpen(true)}>
+  //             <Image src={images.open} alt="open" width={30} height={30}/>
+  //             </div>
+
+  //         </div>
+  //       </div>
+
+  //       {/* MODEL COMPONENT */}
+
+  //       {openModel && (
+  //         <div className={Style.modelBox}>
+  //           <Model openBox={setOpenModel}
+  //             title="WELCOME TO"
+  //             head="CHAT BUDDY"
+  //             info='harum sapiente aliquam non voluptatem, fugiat excepturi sunt!'
+  //             smalInfo="Kindly select your name.."
+  //             image={images.hero}
+  //             functionName={createAccount}
+  //             address={account}
+  //           />
+  //         </div>
+  //       )}
+  //       
+  //     </div>
+
+  // );
+  <></>)
+};
+
+export default NavBar;
 

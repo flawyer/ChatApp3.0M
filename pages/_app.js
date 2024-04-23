@@ -1,6 +1,6 @@
 import { ChatAppProvider } from "../Context/ChatAppContext";
 import { NavBar } from "../Components/index";
-export default function App({ Component, pageProps }) {
+export default function App ({ Component, pageProps }) {
   return( 
     <div>
       <ChatAppProvider>
@@ -8,5 +8,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ChatAppProvider>
     </div>
-  )  
-}
+  );  
+};
